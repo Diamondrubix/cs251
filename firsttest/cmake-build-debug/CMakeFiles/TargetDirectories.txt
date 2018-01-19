@@ -1,3 +1,0 @@
-/home/diamondrubix/CLionProjects/cs251/firsttest/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/diamondrubix/CLionProjects/cs251/firsttest/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/diamondrubix/CLionProjects/cs251/firsttest/cmake-build-debug/CMakeFiles/firsttest.dir
