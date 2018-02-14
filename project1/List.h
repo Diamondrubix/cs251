@@ -8,28 +8,28 @@ using namespace std;
 template <typename T>
 class List
 {
-  private:    
+private:
 
     // struct for singly-linked list nodes
     struct Node
     {
-      T      data;
-      Node   *next;
+        T      data;
+        Node   *next;
 
-      Node( const T & d = T{}, Node * n = nullptr)
-        : data{ d },  next{ n } { }
+        Node( const T & d = T{}, Node * n = nullptr)
+                : data{ d },  next{ n } { }
 
     };
 
 
-  public:
+public:
     // constructors
-    List( ) { 
-      init( );
+    List( ) {
+        init( );
     }
 
     ~List( ) {
-      clear( );
+        clear( );
     }
     /**
      * Disclaimer:  C++ conventions tell us that we should have a couple
@@ -49,15 +49,15 @@ class List
      *        exists).
      */
     void clear(){
-      Node * p = front;
-      Node *pnext;
+        Node * p = front;
+        Node *pnext;
 
-      while(p != nullptr) {
-        pnext = p->next;
-        delete p;
-        p = pnext;
-      }
-      front = back = nullptr;
+        while(p != nullptr) {
+            pnext = p->next;
+            delete p;
+            p = pnext;
+        }
+        front = back = nullptr;
     }
 
 
@@ -69,7 +69,7 @@ class List
      *
      * function: length
      * desc:  returns the length of the calling list
-     *        
+     *
      * REQUIREMENTS:  this is a working implementation, but
      *   it takes linear time.
      *
@@ -99,61 +99,61 @@ class List
     }
 
 
-  public:
+public:
 
     // Return true if the list is empty, false otherwise.
     bool is_empty( ) const {
-      return front == nullptr;
+        return front == nullptr;
     }
 
 
     void print() const {
-      Node *p = front;
+        Node *p = front;
 
-      cout << "[ "; 
-      while(p != nullptr) {
-        cout << p->data << " ";
-        p = p->next;
-      }
-      cout << "]\n";
+        cout << "[ ";
+        while(p != nullptr) {
+            cout << p->data << " ";
+            p = p->next;
+        }
+        cout << "]\n";
     }
 
     void push_front(const T & data) {
-      front = new Node(data, front);
+        front = new Node(data, front);
 
-      if(back == nullptr)
-        back = front;
+        if(back == nullptr)
+            back = front;
 
         len++;
     }
 
     bool pop_front(T &val) {
-      Node *tmp;
+        Node *tmp;
 
-      if(front==nullptr)
-        return false;
-      val = front->data;
+        if(front==nullptr)
+            return false;
+        val = front->data;
 
-      tmp = front;
-      front = front->next;
-      delete tmp;
-      if(front==nullptr)
-        back = nullptr;
+        tmp = front;
+        front = front->next;
+        delete tmp;
+        if(front==nullptr)
+            back = nullptr;
 
         len-=1;
-      return true;
+        return true;
     }
 
     void push_back(const T & val) {
-      Node *tmp = new Node(val, nullptr);
+        Node *tmp = new Node(val, nullptr);
 
-      if(front == nullptr) {
-        front = back = tmp;
-      }
-      else {
-        back->next = tmp;
-        back = tmp;
-      }
+        if(front == nullptr) {
+            front = back = tmp;
+        }
+        else {
+            back->next = tmp;
+            back = tmp;
+        }
         len++;
     }
 
@@ -182,24 +182,24 @@ class List
     }
 
     int slow_remove_all(const T &x) {
-      int n=0;
+        int n=0;
 
-      while(remove_first(x)) {
-          n++;
-      }
+        while(remove_first(x)) {
+            n++;
+        }
         len = 0;
-      return n;
+        return n;
     }
 
     bool is_sorted() const {
-      Node *p = front;
+        Node *p = front;
 
-      while(p!=nullptr && p->next != nullptr) {
-        if(p->data > p->next->data)
-          return true;
-        p = p->next;
-      }
-      return false;
+        while(p!=nullptr && p->next != nullptr) {
+            if(p->data > p->next->data)
+                return true;
+            p = p->next;
+        }
+        return false;
     }
 
 
@@ -208,35 +208,35 @@ class List
 
     /** TODO
      *    function:  count
-     *     description:  Counts number of occurrences 
+     *     description:  Counts number of occurrences
      *     		of x in the list and returns that count.
      *
-     *  REQUIRMENT:  Linear runtime (O(n) where n is the length 
+     *  REQUIRMENT:  Linear runtime (O(n) where n is the length
      *    of the list.)
      */ //Carded
     int count(const T &x) const {
         Node *p = front;
         int num = 0;
-        while(p!= nullptr&& p->next !=nullptr){
+        while(p!= nullptr){
             if(x==p->data){
                 num++;
             }
             p=p->next;
         }
-      return num;
+        return num;
     }
 
-    /* TODO 
-     *    
+    /* TODO
+     *
      *  function:  pop_back
      *
-     *  if list is empty, we do nothing and return false 
+     *  if list is empty, we do nothing and return false
      *  otherwise, the last element in the list is removed, its
-     *      value (data field) is assigned to the reference parameter 
+     *      value (data field) is assigned to the reference parameter
      *      data (so the removed element can be 'passed-back' to the
      *      caller) and true is returned.
      *
-     *  REQUIRMENT:  Linear runtime (O(n) where n is the length 
+     *  REQUIRMENT:  Linear runtime (O(n) where n is the length
      *    of the list.)
      *
      */ //Carded
@@ -249,17 +249,17 @@ class List
         delete(back);
         back = p;
         len--;
-      return false;
+        return false;
     }
 
     /**
-     * TODO:  
-     *   function:  equal_to 
-     *   description:  returns true if calling List and parameter 
+     * TODO:
+     *   function:  equal_to
+     *   description:  returns true if calling List and parameter
      *      List other contain exactly the same sequence of values.
      *      Returns false otherwise.
      *
-     *  REQUIRMENT:  Linear runtime (O(n) where n is the length 
+     *  REQUIRMENT:  Linear runtime (O(n) where n is the length
      *    of the shorter of the two lists.
      **///Carded
     bool equal_to(const List<T> &other) const {
@@ -279,17 +279,17 @@ class List
         }
         return true;
 
-      return false;  // placeholder
+        return false;  // placeholder
 
     }
 
     /**
-     * TODO:  print in reverse order 
+     * TODO:  print in reverse order
      *
      * Try to do without looking at notes!
      * Hints:  recursive helper function
      *
-     *  REQUIRMENT:  Linear runtime (O(n) where n is the length 
+     *  REQUIRMENT:  Linear runtime (O(n) where n is the length
      *    of the list.)
      *///Carded
     void print_rev_R(Node *p) const { //make this static or private (figure that out)
@@ -313,9 +313,9 @@ class List
     /* TODO
      *  For full credit, you cannot allocate any new memory!
      *
-     *  description:  self-evident 
+     *  description:  self-evident
      *
-     *  REQUIRMENT:  Linear runtime (O(n) where n is the length 
+     *  REQUIRMENT:  Linear runtime (O(n) where n is the length
      *    of the list.)
      */ //Carded
     void reverse() {
@@ -343,12 +343,12 @@ class List
      *   function:  fast_remove_all
      *   description:  same behavior/semantics as
      *      slow_remove_all.  However, this function
-     *      must guarantee linear time worst case 
+     *      must guarantee linear time worst case
      *      runtime (hence, "fast").
      *
      *   REQUIREMENT:  linear worst-case runtime.
      *
-     *   Note:  your solution may be either recursive or 
+     *   Note:  your solution may be either recursive or
      *   iteratieve.
      **/ //Carded
     int fast_remove_all(const T &x) {
@@ -367,7 +367,7 @@ class List
             }
             temp = temp->next;
         }
-      return 0;
+        return 0;
     }
 
     /** TODO
@@ -423,18 +423,18 @@ class List
      * description:  assumes both list a and b are in
      * 	sorted (non-descending) order and merges them
      * 	into a single sorted list with the same
-     * 	elements.  
+     * 	elements.
      *
      * 	This single sorted list is stored in a while
      * 	b becomes empty.
      *
-     * 	if either of given lists are not sorted, 
+     * 	if either of given lists are not sorted,
      * 	we blame the caller and the behavior is
      * 	implementation dependent -- i.e., don't worry
      * 	about it!
      *
      *      Condition in which both parameters are the same
-     *      list (not merely "equal"), the function simply 
+     *      list (not merely "equal"), the function simply
      *      does nothing and returns.  This can be tested
      *      with simple pointer comparison.
      *
@@ -447,12 +447,12 @@ class List
      *
      * 		  a:  [2 3 4 5 8 8 9 10 11 20 30 40]
      * 		  b:  []
-     * 
+     *
      *
      * REQUIREMENTS:
      *
-     * 	Runtime Must be linear in the length of the 
-     * 	resulting merged list (or using variables above, 
+     * 	Runtime Must be linear in the length of the
+     * 	resulting merged list (or using variables above,
      * 	O(a.length()+b.length()).
      *
      *  should not allocate ANY new list
@@ -461,17 +461,21 @@ class List
      */ //carded
     void merge_with(List &other){
         Node *nlist;
+        Node *tnlist;
         Node *temp = front;
         Node *temp2 = other.front;
+        len+=other.length();
+        //decremet size;
         if(temp->data<temp2->data){
             nlist = temp;
+            tnlist = temp;
             temp=temp->next;
         }else{
             nlist = temp2;
+            tnlist = temp2;
             temp2=temp2->next;
         }
-        Node *tnlist = nlist;
-        while(temp!=nullptr){
+        while(temp!=nullptr &&temp2!=nullptr){
             if(temp->data<temp2->data){
                 tnlist->next=temp;
                 temp=temp->next;
@@ -481,14 +485,30 @@ class List
             }
             tnlist = tnlist->next;
         }
+        /*
+        if(temp!=nullptr){
+            tnlist->next = temp2;
+            tnlist = temp2;
+        }
+        else if(temp2 !=nullptr){
+            tnlist->next = temp;
+            tnlist = temp;
+        }
+         */
+
         while(temp2!=nullptr){
             tnlist->next=temp2;
             tnlist=tnlist->next;
             temp2=temp2->next;
         }
 
+
+        other.front = nullptr;
+        other.back = nullptr;
+        other.increaseLength(-1*other.length());
         front = nlist;
         back = tnlist;
+
 
     }
 
@@ -511,7 +531,7 @@ class List
             temp=temp->next;
         }
 
-      return l;
+        return l;
 
     }
 
@@ -574,8 +594,8 @@ class List
      *       ORDERING:  the ordering of the returned prefix should be the same as
      *                  in the given list
      *
-     *       MEMORY:    for full credit, no new nodes should be 
-     *                  allocated or deallocated; you should just 
+     *       MEMORY:    for full credit, no new nodes should be
+     *                  allocated or deallocated; you should just
      *                  "re-use" the existing nodes.  HOWEVER, you will
      *		               need to allocate a List object for the returned
      *		               prefix (but, again, the underlying Nodes should be
@@ -583,16 +603,30 @@ class List
      */ //Carded
     List<T> * prefix(unsigned int k) {
         int i;
-        Node *temp = front;
         List *n = new List();
-        for(i=0;i<k&&temp!=nullptr;i++){
-            n->push_front(temp->data);
-            pop_front(front->data); //check if that is the right input to that function
+        if(k <1){
+            return n;
+        }else{
+            n->front = front;
+            front = front->next;
         }
+        Node *other = n->front;
+        Node *main = n->front;
+        for(i=1;i<k&&other!=nullptr;i++){
+            //n->push_front(temp->data);
+            other = other->next;
+            //n->increaseLength(1);
+            //pop_front(front->data); //check if that is the right input to that function
+        }
+        len = len-k;
+        n->increaseLength(k);
+        front = other->next;
+        other->next= nullptr;
+        n->front = main;
+
+
 
         return n;
-
-      return nullptr;
 
     }
 
@@ -602,7 +636,7 @@ class List
      *
      * description:  removes all elements of the given list (lst) which
      *		are less than or equal to a given value (cutoff)
-     *		
+     *
      *		A list containing the removed elements is returned.
      *
      * examples:
@@ -633,20 +667,48 @@ class List
      *		   you should just "re-use" the existing nodes.  HOWEVER, you will
      *		   need to allocate a LIST structure itself (i.e., for the returned
      *		   list).
-     *			
+     *
      */ //Carded
     List * filter_leq(const T & cutoff) {
         Node *temp = front;
         List *n = new List();
+        Node *other = n->front;
+        Node *otherF = n->front;
+        Node *nl = nullptr;
+        Node *nlF = nullptr;
+        int nom = 0;
+        int nom2 = 0;
         while(temp!=nullptr){
             if(temp->data<=cutoff) {
-                n->push_front(temp->data);
-                pop_front(front->data);
+                if(nom ==0){
+                    other = temp;
+                    otherF = temp;
+                    nom = 1;
+                }else{
+                    other->next = temp;
+                    other = other->next;
+                }
+
+                //pop_front(front->data);
+            }else{
+                if(nom2==0){
+                    nl = temp;
+                    nlF = temp;
+                    nom2 = 1;
+                }else{
+                    nl->next=temp;
+                    nl = nl->next;
+                }
             }
             temp=temp->next;
         }
+        other->next = nullptr;
+        n->back=other;
+        n->front= otherF;
+        front = nlF;
+        back =nl;
 
-      return nullptr;
+        return n;
 
     }
 
@@ -655,7 +717,7 @@ class List
      * function:  concat
      *
      * description:  concatenates the calling list with parameter list (other)
-     *    The resulting concatenation is reflected the calling list; the 
+     *    The resulting concatenation is reflected the calling list; the
      *    parameter list (other) becomes empty.
      *
      *    example:
@@ -663,7 +725,7 @@ class List
      *	EX1:  a: [2, 9, 1]
      *	      b: [5, 1, 2]
      *
-     *	      call:  
+     *	      call:
      *	            a.concat(b);
      *
      *	after call:
@@ -671,7 +733,7 @@ class List
      *		a: [2, 9, 1, 5, 1, 2]
      *		b: []
      *
-     * REQUIREMENTS:  
+     * REQUIREMENTS:
      *
      *     runtime:  O(1)
      *
@@ -691,21 +753,21 @@ class List
      *		called this way.  If so the function does nothing
      *		and (optionally) prints an error message to
      *		stderr.
-     *	
+     *
      */ //Carded
     void concat(List<T> &other) {
 
-      if(this == &other) {
-        cerr << "warning:  List::concat():  calling object same as parameter";
-        cerr << "\n          list unchanged\n";
-        return;
-      }
+        if(this == &other) {
+            cerr << "warning:  List::concat():  calling object same as parameter";
+            cerr << "\n          list unchanged\n";
+            return;
+        }
         len +=other.length();
         back->next=other.front;
         back = other.getBackPTR();
         other.front = nullptr;
         other.back = nullptr;
-      cout << "List::concat(): no error...\n";
+        cout << "List::concat(): no error...\n";
     }
 
 
@@ -738,21 +800,21 @@ class List
      *
      *          [4 1 3] < [4 1 3 0 0 0]  (prefix: just like "car" is before
      *                                            "cartoon" in the dictionary).
-     * 
-     *          [4 5 6 1 2 3 9 9 9] < [4 5 6 1 4 0 0] 
+     *
+     *          [4 5 6 1 2 3 9 9 9] < [4 5 6 1 4 0 0]
      *                   ^                     ^
      *                      (they have a common prefix of length 4; but at
      *                      the fifth position they differ and the left list
      *                      is the winner (smaller) -- no need to look further)
      *
-     *                      
+     *
      *        Templates?
      *
      *          Since List is a template class, the elements of a particular
      *          list need not be integers.  For example, we could have
      *          lists of strings.
      *
-     *          Good news:  the exact same principle applies because 
+     *          Good news:  the exact same principle applies because
      *          strings can be compared just like integers can be compared!
      *
      *          Great news:  you don't need to think about this at all!
@@ -761,15 +823,15 @@ class List
      *
      *          Why?  Because, for example, all of these operators:
      *
-     *                   <, <=, ==, > and >= 
+     *                   <, <=, ==, > and >=
      *
      *          all work on strings.  They are not 'built-in' to C++, but
-     *          the class string has "overloaded" these operators (they 
+     *          the class string has "overloaded" these operators (they
      *          result in an appropriate function call).
      *
-     *          (In a subsequent exercise, we will do this kind of 
+     *          (In a subsequent exercise, we will do this kind of
      *          overloading ourselves!)
-     *                                     
+     *
      *        Examples with lists of strings:
      *
      *          ["egg", "goat"] < ["egg", "globe", "apple"]
@@ -860,7 +922,7 @@ class List
         }
 
 
-      return n;
+        return n;
     }
 
     int R_suffix_maxes(Node *n , int *nom) const{ //make private later
@@ -900,14 +962,18 @@ class List
         return front;
     }
 
-  private:
+    void increaseLength(int l){ //make private
+        len +=l;
+    }
+
+private:
     Node *front;
     Node *back;
     int len;
 
     void init( ) {
-      front = nullptr;
-      back = nullptr;
+        front = nullptr;
+        back = nullptr;
         len = 0;
     }
 };

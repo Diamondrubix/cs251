@@ -35,7 +35,7 @@ int main(int argc, char *argv[]){
     for(x=1; x<=4; x++) {
         //list->push_front(x);
     }
-    list->print();
+    //list->print();
 
     for(x=1; x<=4; x++) {
         list->push_back(x);
@@ -46,12 +46,18 @@ int main(int argc, char *argv[]){
 
 
     //list->print();
-    list->push_back(2);
+    //list->push_back(2);
     list->push_back(7);
+    list->push_back(9);
     list->print();
     list4->print();
-    list->concat(*list4);
+    list->merge_with(*list4);
+    //List<int> *nl = list->filter_leq(5);
     list->print();
+    list4->print();
+    //nl->print();
+    //list->concat(*list4);
+    //list->print();
 
     /*rev test
     list->print();
