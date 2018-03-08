@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/aarato/CLionProjects/cs251/gridworld/GWInterface.h
+vector
+-
+iostream
+-
+
+/home/aarato/CLionProjects/cs251/gridworld/GridWorld.h
+GWInterface.h
+/home/aarato/CLionProjects/cs251/gridworld/GWInterface.h
+vector
+-
+iostream
+-
+stdlib.h
+-
+
+/home/aarato/CLionProjects/cs251/gridworld/main.cpp
+GridWorld.h
+/home/aarato/CLionProjects/cs251/gridworld/GridWorld.h
+string
+-
+iostream
+-
+sstream
+-
+vector
+-
+
