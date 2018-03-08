@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug"/>
+				<Option working_dir="/home/aarato/CLionProjects/cs251/project1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug"/>
+				<Option working_dir="/home/aarato/CLionProjects/cs251/project1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug"/>
+				<Option working_dir="/home/aarato/CLionProjects/cs251/project1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project1">
-				<Option output="/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/project1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug"/>
+				<Option output="/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/project1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/aarato/CLionProjects/cs251/project1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 project1"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 project1"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project1/fast">
-				<Option output="/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/project1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug"/>
+				<Option output="/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/project1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/aarato/CLionProjects/cs251/project1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,20 +77,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 project1/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/diamondrubix/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 project1/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/aarato/CLionProjects/cs251/project1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/diamondrubix/CLionProjects/cs251/project1/List.h">
+		<Unit filename="/home/aarato/CLionProjects/cs251/project1/List.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/home/diamondrubix/CLionProjects/cs251/project1/main.cpp">
+		<Unit filename="/home/aarato/CLionProjects/cs251/project1/main.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/home/diamondrubix/CLionProjects/cs251/project1/CMakeLists.txt">
+		<Unit filename="/home/aarato/CLionProjects/cs251/project1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
