@@ -101,6 +101,16 @@ private:
         return true;
     }
 
+    void deleteDistrict(district* d){
+        person* p = d->head;
+        person* temp = p;
+        while(temp!= nullptr){
+            p = p->next;
+            free(temp);
+            temp = p;
+        }
+    }
+
 
 public:
     GridWorld(unsigned nrows, unsigned ncols)   {
@@ -117,6 +127,16 @@ public:
       // your constructor code here!
     }
     ~GridWorld(){
+        int i,j;
+        for(i=0; i<rows;i++){
+            for(j=0; j<cols;j++){
+                deleteDistrict(&world[i][j]);
+            }
+            free(world[i]);
+        }
+        totalPop.clear();
+        //delete(&totalPop);
+        free(world);
       // your destructor code here.
     }
     //const time
