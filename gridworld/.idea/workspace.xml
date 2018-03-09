@@ -46,8 +46,8 @@
       <file leaf-file-name="GridWorld.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GridWorld.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-726">
-              <caret line="83" column="9" lean-forward="true" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+            <state relative-caret-position="158">
+              <caret line="196" column="9" lean-forward="true" selection-start-line="196" selection-start-column="9" selection-end-line="196" selection-end-column="9" />
               <folding>
                 <element signature="e#1#25#0" expanded="true" />
               </folding>
@@ -74,6 +74,7 @@
       <find>totalpop</find>
       <find>totalpop.size</find>
       <find>birth</find>
+      <find>population++</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -176,16 +177,15 @@
       <workItem from="1520525881362" duration="883000" />
       <workItem from="1520533742386" duration="1122000" />
       <workItem from="1520539602459" duration="6164000" />
-      <workItem from="1520548741393" duration="2902000" />
+      <workItem from="1520548741393" duration="5674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16221000" />
+    <option name="totallyTimeSpent" value="18993000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="-4" width="1309" height="772" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23605806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -196,7 +196,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36849925" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.60029715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -215,7 +215,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/GridWorld.h</url>
+          <line>168</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -474,8 +481,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GridWorld.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-726">
-          <caret line="83" column="9" lean-forward="true" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+        <state relative-caret-position="158">
+          <caret line="196" column="9" lean-forward="true" selection-start-line="196" selection-start-column="9" selection-end-line="196" selection-end-column="9" />
           <folding>
             <element signature="e#1#25#0" expanded="true" />
           </folding>

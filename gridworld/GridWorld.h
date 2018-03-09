@@ -25,7 +25,7 @@ private:
     }district;
 
     vector<person*> totalPop;
-
+    int totalPopulation;
     district ghost;
 
     district** world;
@@ -52,7 +52,7 @@ private:
     //pushes to the back
     void pushDistrict(district* d, person* p){
         d->population++;
-        if(d->head ==nullptr){
+        if(d->head ==nullptr || d->population==1){
             d->head = p;
             d->back = p;
             p->next = nullptr;
@@ -88,9 +88,13 @@ private:
             return true;
         }
         person* temp = n->prev;
-        person* temp2 = n->next;
-        temp->next = temp2;
-        temp2->prev = temp;
+        if(n->next ==nullptr){
+            temp = nullptr;
+        }else {
+            person *temp2 = n->next;
+            temp->next = temp2;
+            temp2->prev = temp;
+        }
         pushDistrict(dest, n);
         return true;
     }
@@ -100,6 +104,7 @@ public:
     GridWorld(unsigned nrows, unsigned ncols)   {
         rows = nrows;
         cols = ncols;
+        totalPopulation = 0;
         world = (district**) malloc (nrows * sizeof(district*) );
         int i,j;
         for(i=0; i<ncols;i++){
@@ -127,6 +132,7 @@ public:
                 totalPop[n->id] = n;
             }
             id = n->id;
+            totalPopulation++;
             return true;
         }
 
@@ -141,25 +147,12 @@ public:
         if(n->alive) {
             n->alive = false;
             district* d = &world[n->row][n->col];
-            d->population--;
-            if(d->population==1){ //replace the thing with d later. or not, shouldn't matter
-                world[n->row][n->col].head = nullptr;
-                world[n->row][n->col].back = nullptr;
-                world[n->row][n->col].population=0;
-                pushDistrict(&ghost, n);
+            if(moveT(n,d,&ghost)){
+                totalPopulation--;
                 return true;
+            }else {
+                return false;
             }
-            if(n->prev ==nullptr){
-                d->head = n->next;
-                pushDistrict(&ghost, n);
-                return true;
-            }
-            person* temp = n->prev;
-            person* temp2 = n->next;
-            temp->next = temp2;
-            temp2->prev = temp;
-            pushDistrict(&ghost, n);
-            return true;
         }
 
       return false;
@@ -178,33 +171,49 @@ public:
       return false;
     }
 
-
+    //const
     bool move(int id, int targetRow, int targetCol){
         if(id>totalPop.size()){
             return false;
         }
+        person* p = totalPop[id];
+        district* d1 = &world[p->row][p->col];
+        p->row = targetRow;
+        p->col = targetCol;
+        district* d2 = &world[targetRow][targetCol];
+        return moveT(p,d1,&world[targetRow][targetCol]);
 
-      return false;
     }
 
     std::vector<int> * members(int row, int col)const{
-
-      return nullptr;
+        vector<int>* mems = new vector<int>;
+        if(row<=rows && col<=cols) {
+            district d = world[row][col];
+            person* temp = d.head;
+            while(temp!= nullptr) {
+                mems->push_back(temp->id);
+                temp = temp->next;
+            }
+        }
+      return mems;
     }
 
     int population()const{
-      return 0;
+      return totalPopulation;
     }
-    
+    //const
     int population(int row, int col)const{
+        if(row<=rows && col<=cols){
+            return world[row][col].population;
+        }
       return 0;
     }
 
     int num_rows()const {
-      return 0;
+      return rows;
     }
     int num_cols()const {
-      return 0;
+      return cols;
     }
 
 };
