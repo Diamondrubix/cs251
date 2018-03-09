@@ -59,7 +59,7 @@ private:
             p->prev = nullptr;
             return;
         }
-        if(d->head == d->back){
+        if(d->population==2){
             d->back = p;
             d->head->next = p;
             p->prev = d->head;
@@ -75,21 +75,23 @@ private:
     bool moveT(person* n, district* d, district* dest){
         //district* d = &world[n->row][n->col];
         d->population--;
-        if(d->population==1){ //replace the thing with d later. or not, shouldn't matter
+        if(d->population==0){ //replace the thing with d later. or not, shouldn't matter
             world[n->row][n->col].head = nullptr;
             world[n->row][n->col].back = nullptr;
-            world[n->row][n->col].population=0;
+            //world[n->row][n->col].population=0;
             pushDistrict(dest, n);
             return true;
         }
         if(n->prev ==nullptr){
             d->head = n->next;
+            d->head->prev = nullptr;
             pushDistrict(dest, n);
             return true;
         }
         person* temp = n->prev;
         if(n->next ==nullptr){
-            temp = nullptr;
+            d->back = d->back->prev;
+            temp->next = nullptr;
         }else {
             person *temp2 = n->next;
             temp->next = temp2;
@@ -119,7 +121,7 @@ public:
     }
     //const time
     bool birth(int row, int col, int &id){
-        if(this->rows>=row && this->cols>=col) {
+        if(this->rows>=row && this->cols>=col && row>=0 && col>=0) {
             person *n = new person;
             n->id = getNewId();
             n->alive = true;
@@ -159,7 +161,7 @@ public:
     }
     //const
     bool whereis(int id, int &row, int &col)const{
-        if(id>totalPop.size()){
+        if(id>totalPop.size()-1 || id<0){
             return false;
         }
         person* p = totalPop[id];
@@ -173,15 +175,23 @@ public:
 
     //const
     bool move(int id, int targetRow, int targetCol){
-        if(id>totalPop.size()){
+        if(targetRow<0 || targetCol<0 || targetCol>=this->cols || targetRow>=this->rows){
             return false;
         }
+        if(id<0||id>totalPop.size()-1){
+            return false;
+        }
+
         person* p = totalPop[id];
-        district* d1 = &world[p->row][p->col];
-        p->row = targetRow;
-        p->col = targetCol;
-        district* d2 = &world[targetRow][targetCol];
-        return moveT(p,d1,&world[targetRow][targetCol]);
+        if(p->alive) {
+            district *d1 = &world[p->row][p->col];
+            p->row = targetRow;
+            p->col = targetCol;
+            district *d2 = &world[targetRow][targetCol];
+            return moveT(p, d1, &world[targetRow][targetCol]);
+        }else{
+            return false;
+        }
 
     }
 
@@ -203,7 +213,7 @@ public:
     }
     //const
     int population(int row, int col)const{
-        if(row<=rows && col<=cols){
+        if(row<=rows && col<=cols &&row>=0 && col>=0){
             return world[row][col].population;
         }
       return 0;
