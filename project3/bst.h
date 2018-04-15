@@ -46,6 +46,35 @@ class bst {
     }
 
   private:
+    static int min(int l, int r){
+        if(l<r){
+            return l;
+        }else{
+            return r;
+        }
+    }
+
+    static int max(int l, int r){
+        if(l>r){
+            return l;
+        }else{
+            return r;
+        }
+    }
+    //swap n1 with n2
+    static void swap(bst_node* n1, bst_node* n2){
+        T tempVal = n1->val;
+        n1->val=n2->val;
+        n2->val = tempVal;
+        /*
+        bst_node *left = n1->left;
+        bst_node *right = n1->right;
+        int height = n1->height;
+        int leftChildren = n1->leftChildren;
+        int rightChildren = n1->rightChildren;
+         */
+
+    }
 
 /**
  * function:  insert()
@@ -66,25 +95,97 @@ class bst {
         success = false;
         return r;
       }
-      if(x < r->val){
-          r->leftChildren++;
-          r->left = _insert(r->left, x, success, height + 1);
+      if(x < r->val){ //left
+          if(max(r->leftChildren+1,r->rightChildren)>((2*min(r->leftChildren+1,r->rightChildren))+1)){
+              bst_node* n = new bst_node(x, nullptr, nullptr, height);
+              if(r->right== nullptr){
+                  if(r->left->val>x){
+                      swap(r, r->left);
+                      r->right = r->left;
+                      r->rightChildren = r->leftChildren;
+                      n->height=r->height+1;
+                      r->left = n;
+                      return r;
+                  }
+                  n->left = r->left;
+                  r->left = nullptr;
+                  n->right = r;
+                  //variable updates
+                  n->height = r->height;
+                  r->height++;
+                  n->leftChildren = r->leftChildren;
+                  r->leftChildren = 0;
+                  n->rightChildren++;
+                  return n;
+              }else{
+                  //rotation
+                  swap(r, r->left);
+                  bst_node * temp = r->right;
+                  bst_node* temp2 = r->left->right;
+                  r->right = r->left;
+                  r->left = r->left->left;
+                  r->left->height--;
+                  //r->right->left = r->right->right; //del
+                  temp->height++;
+                  r->right->right = temp;
+                  //r->left = r->left->left;
+                  r->right->left = temp2;
+                  r->leftChildren= 1;
+                  r->rightChildren = r->right->rightChildren+r->right->leftChildren+1;
+                  return _insert(r,x,success,height);
+
+              }
+          }else {
+              r->leftChildren++;
+              r->left = _insert(r->left, x, success, height + 1);
+          }
         return r;
       }
       else {
           //if(r->left !=nullptr) {
-          r->rightChildren++;
+          if(max(r->leftChildren,r->rightChildren+1)>((2*min(r->leftChildren,r->rightChildren+1))+1)) {
+              bst_node *n = new bst_node(x, nullptr, nullptr, height);
+              if (r->left == nullptr) {
+                  if(r->right->val<x){
+                      swap(r, r->right);
+                      r->left = r->right;
+                      r->leftChildren = r->rightChildren;
+                      n->height=r->height+1;
+                      r->right = n;
+                      return r;
+                  }
+                  n->right = r->right;
+                  r->right = nullptr;
+                  n->left = r;
+                  //variable updates
+                  n->height = r->height;
+                  r->height++;
+                  n->rightChildren = r->rightChildren;
+                  r->rightChildren = 0;
+                  n->leftChildren++;
+                  return n;
+              }else{
+                  //rotation
+                  swap(r, r->right);
+                  bst_node * temp = r->right;
+                  bst_node* temp2 = r->right->left;
+                  r->left = r->right;
+                  r->right = r->right->right;
+                  r->right->height--;
+                  //r->right->left = r->right->right; //del
+                  temp->height++;
+                  r->left->left = temp;
+                  //r->left = r->left->left;
+                  r->left->right = temp2;
+                  r->rightChildren= 1;
+                  r->leftChildren = r->left->leftChildren+r->left->rightChildren+1;
+                  return _insert(r,x,success,height);
+
+              }
+          }else{
+              r->rightChildren++;
               r->right = _insert(r->right, x, success, height + 1);
-          //}else{
-            /*  bst_node* temp = r->right;
-              bst_node* temp2 = r;
-              r = temp;
-              r->height--;
-              r->left = temp2;
-              r->left->height++;
-              r->right = _insert(r->right, x, success, height+1);
           }
-             */
         return r;
       }
     }
