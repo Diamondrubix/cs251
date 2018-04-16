@@ -75,6 +75,7 @@ class bst {
          */
 
     }
+
     //helper function that makes an in order array
     static void C_balance(bst_node* n, std::vector<bst_node*> *o){
         if(n== nullptr){
@@ -86,20 +87,37 @@ class bst {
 
     }
 
-    static bst_node* _balance(bst_node* n,std::vector<bst_node*> *o, unsigned long int middle ){
-        if(middle<0){
-            return n;
-        }
-        //n->right = _balance()
+    static bst_node * _bal_sorted_vec(const std::vector<bst_node*> &a, int low, int hi){
+        int m;
+        bst_node *root;
+
+        if(hi < low) return nullptr;
+        m = (low+hi)/2;
+        root = a[m];
+        root->left  = _from_vec(a, low, m-1);
+        root->right = _from_vec(a, m+1, hi);
+        return root;
+
     }
+
+    static bst * bal_sorted_vec(std::vector<bst_node*> &a, int n){
+        bst_node* t;
+        t = _bal_sorted_vec(a, 0, n-1);
+        return t;
+    }
+
 
     static bst_node* balance( bst_node* n){
         std::vector<bst_node*> inOrder;
         //inOrder = new std::vector<T>();
+        //gets sorted vector
         C_balance(n, &inOrder);
         //remake tree
-        unsigned long int middle = inOrder.size()/2;
-        bst_node* r = _balance(inOrder[middle],&inOrder,middle);
+        n = bal_sorted_vec(inOrder, inOrder.size());
+
+
+        //unsigned long int middle = inOrder.size()/2;
+        //bst_node* r = bal_sorted_vec(&inOrder, )
 
 
         return n;
@@ -152,22 +170,31 @@ class bst {
                   //rotation
                   if(r->left->right==nullptr) {
                       swap(r, r->left);
+                      bst_node * temp = r->right;
+                      bst_node* temp2 = r->left->right;
+                      r->right = r->left;
+                      r->left = r->left->left;
+                      r->left->height--;
+                      //r->right->left = r->right->right; //del
+                      temp->height++;
+                      r->right->right = temp;
+                      //r->left = r->left->left;
+                      r->right->left = temp2;
+                      r->leftChildren= 1;
+                      r->rightChildren = r->right->rightChildren+r->right->leftChildren+1;
+                      return _insert(r,x,success,height);
                   }else{
                       swap(r, r->left->right);
+                      bst_node* temp = r->left->right;
+                      r->left->right= nullptr;
+                      //just assigned the node to the right part of the tree
+                      if(r->right->val>temp->val){
+                          r->right->left = temp;
+                      }else{
+                          r->right->left = temp;
+                      }
+                      _insert(r,x,success,height);
                   }
-                  bst_node * temp = r->right;
-                  bst_node* temp2 = r->left->right;
-                  r->right = r->left;
-                  r->left = r->left->left;
-                  r->left->height--;
-                  //r->right->left = r->right->right; //del
-                  temp->height++;
-                  r->right->right = temp;
-                  //r->left = r->left->left;
-                  r->right->left = temp2;
-                  r->leftChildren= 1;
-                  r->rightChildren = r->right->rightChildren+r->right->leftChildren+1;
-                  return _insert(r,x,success,height);
 
               }
           }else {

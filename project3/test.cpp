@@ -19,6 +19,7 @@ int main(){
     }
     printf("\nmy test\n");
     int num = 9;
+    
     //t->remove(num);
     //num = 10;
     //t->remove(num);
