@@ -11,13 +11,18 @@ int main(){
     while( (std::cin >> x))
         t->insert(x);
 
+
     if(t->size() <= 20) {
       t->inorder();
 	    t->preorder();
 	    t->postorder();
     }
     printf("\nmy test\n");
-    int num = -999;
+    int num = 9;
+    //t->remove(num);
+    //num = 10;
+    //t->remove(num);
+
     //printf("%d", t->num_geq(10));
     printf("%d", t->num_range(4,5));
 

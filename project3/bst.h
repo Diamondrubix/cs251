@@ -75,6 +75,37 @@ class bst {
          */
 
     }
+    //helper function that makes an in order array
+    static void C_balance(bst_node* n, std::vector<bst_node*> *o){
+        if(n== nullptr){
+            return;
+        }
+        C_balance(n->left, o);
+        o->push_back(n);
+        C_balance(n->right, o);
+
+    }
+
+    static bst_node* _balance(bst_node* n,std::vector<bst_node*> *o, unsigned long int middle ){
+        if(middle<0){
+            return n;
+        }
+        //n->right = _balance()
+    }
+
+    static bst_node* balance( bst_node* n){
+        std::vector<bst_node*> inOrder;
+        //inOrder = new std::vector<T>();
+        C_balance(n, &inOrder);
+        //remake tree
+        unsigned long int middle = inOrder.size()/2;
+        bst_node* r = _balance(inOrder[middle],&inOrder,middle);
+
+
+        return n;
+    }
+
+
 
 /**
  * function:  insert()
@@ -119,7 +150,11 @@ class bst {
                   return n;
               }else{
                   //rotation
-                  swap(r, r->left);
+                  if(r->left->right==nullptr) {
+                      swap(r, r->left);
+                  }else{
+                      swap(r, r->left->right);
+                  }
                   bst_node * temp = r->right;
                   bst_node* temp2 = r->left->right;
                   r->right = r->left;
@@ -139,8 +174,10 @@ class bst {
               r->leftChildren++;
               r->left = _insert(r->left, x, success, height + 1);
           }
+
         return r;
       }
+
       else {
           //if(r->left !=nullptr) {
           if(max(r->leftChildren,r->rightChildren+1)>((2*min(r->leftChildren,r->rightChildren+1))+1)) {
@@ -267,30 +304,66 @@ class bst {
         if(r->left == nullptr){
           tmp = r->right;
           delete r;
+            //tmp->rightChildren--;
           return tmp;
         }
         if(r->right == nullptr){
           tmp = r->left;
           delete r;
+            //tmp->leftChildren--;
           return tmp;
         }
         // if we get here, r has two children
         r->val = _min_node(r->right)->val;
+          r->rightChildren--;
         r->right = _remove(r->right, r->val, sanity);
         if(!sanity)
           std::cerr << "ERROR:  remove() failed to delete promoted value?\n";
         return r;
       }
-      if(x < r->val){
-        r->left = _remove(r->left, x, success);
+      if(x < r->val){ //left
+
+          if(max(r->leftChildren-1,r->rightChildren)<=((2*min(r->leftChildren-1,r->rightChildren))+1)){
+              r->left = _remove(r->left, x, success);
+              r->leftChildren--;
+          }else {
+              r->left = _remove(r->left, x, success);
+              r->leftChildren--;
+
+
+          }
       }
-      else {
-        r->right = _remove(r->right, x, success);
+      else { //right
+          if(max(r->leftChildren,r->rightChildren-1)<=((2*min(r->leftChildren,r->rightChildren-1))+1)) {
+              r->right = _remove(r->right, x, success);
+              r->rightChildren--;
+          }else{
+              r->right = _remove(r->right, x, success);
+              r->rightChildren--;
+              bst_node* temp = r;
+              if(r->left->right== nullptr){
+                  r = r->left;
+                  r->right = temp;
+              }else{
+                  r = r->left->right;
+                  r->leftChildren = temp->leftChildren-1;
+                  r->height = temp->height;
+                  temp->leftChildren = 0;
+                  temp->left->right =nullptr;
+                  r->left = temp->left;
+                  r->right = temp;
+                  temp->height++;
+                  //r->rightChildren+=r->right->leftChildren+r->right->rightChildren+1;
+                  r->right->left = nullptr; //why do i do this?
+                  r->rightChildren++;
+                  r->left->rightChildren = 0;
+              }
+
+          }
       }
       return r;
 
     }
-
   public:
 
     bool remove(T & x){
