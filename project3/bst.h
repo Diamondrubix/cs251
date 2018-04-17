@@ -12,12 +12,11 @@ class bst {
       T      val;
       bst_node *left;
       bst_node *right;
-        int height;
         int leftChildren;
         int rightChildren;
 
-      bst_node ( const T & _val = T{}, bst_node * l = nullptr, bst_node *r = nullptr, int h = -1, int c = 0)
-        : val { _val },  left { l }, right {r} ,height{h}, leftChildren{c}, rightChildren{c}
+      bst_node ( const T & _val = T{}, bst_node * l = nullptr, bst_node *r = nullptr, int c = 0)
+        : val { _val },  left { l }, right {r} , leftChildren{c}, rightChildren{c}
       { }
     };
 
@@ -94,8 +93,14 @@ class bst {
         if(hi < low) return nullptr;
         m = (low+hi)/2;
         root = a[m];
+        root->rightChildren = 0;
+        root->leftChildren = 0;
         root->left  = _bal_sorted_vec(a, low, m-1);
+        if(root->left!= nullptr)
+            root->leftChildren = root->left->leftChildren+root->left->rightChildren+1;
         root->right = _bal_sorted_vec(a, m+1, hi);
+        if(root->right!= nullptr)
+            root->rightChildren = root->right->leftChildren+root->right->rightChildren+1;
         return root;
 
     }
@@ -109,16 +114,9 @@ class bst {
 
     static bst_node* balance( bst_node* n){
         std::vector<bst_node*> inOrder;
-        //inOrder = new std::vector<T>();
-        //gets sorted vector
         C_balance(n, &inOrder);
         //remake tree
         n = bal_sorted_vec(inOrder, inOrder.size());
-
-
-        //unsigned long int middle = inOrder.size()/2;
-        //bst_node* r = bal_sorted_vec(&inOrder, )
-
 
         return n;
     }
@@ -134,10 +132,10 @@ class bst {
  *
  * notes:     if x is already in tree, no modifications are made.
  */
-    static bst_node * _insert(bst_node *r, T & x, bool &success, int height){
+    static bst_node * _insert(bst_node *r, T & x, bool &success ){
       if(r == nullptr){
         success = true;
-        return new bst_node(x, nullptr, nullptr, height);
+        return new bst_node(x, nullptr, nullptr);
       }
 
       if(r->val == x){
@@ -146,14 +144,14 @@ class bst {
       }
       if(x < r->val){ //left
           if(max(r->leftChildren+1,r->rightChildren)>((2*min(r->leftChildren+1,r->rightChildren))+1)){
-              bst_node* n = new bst_node(x, nullptr, nullptr, height);
+              bst_node* n = new bst_node(x, nullptr, nullptr);
               r->leftChildren++;
-              r->left = _insert(r->left, x, success, height + 1);
+              r->left = _insert(r->left, x, success);
               r = balance(r);
 
           }else {
               r->leftChildren++;
-              r->left = _insert(r->left, x, success, height + 1);
+              r->left = _insert(r->left, x, success);
           }
 
         return r;
@@ -162,13 +160,13 @@ class bst {
       else {
           //if(r->left !=nullptr) {
           if(max(r->leftChildren,r->rightChildren+1)>((2*min(r->leftChildren,r->rightChildren+1))+1)) {
-              bst_node *n = new bst_node(x, nullptr, nullptr, height);
+              bst_node *n = new bst_node(x, nullptr, nullptr);
               r->rightChildren++;
-              r->right = _insert(r->right, x, success, height + 1);
+              r->right = _insert(r->right, x, success);
               r = balance(r);
           }else{
               r->rightChildren++;
-              r->right = _insert(r->right, x, success, height + 1);
+              r->right = _insert(r->right, x, success);
           }
         return r;
       }
@@ -188,15 +186,10 @@ class bst {
    */
    bool insert(T & x){
       bool success;
-      root = _insert(root, x, success, 0);
+      root = _insert(root, x, success);
       return success;
    }
 
-    bool massInsert(int* x, int size){
-        for(int i = 0; i<size;i++){
-            insert(x[i]);
-        }
-    }
 
 /**
  * function:  contains()
@@ -282,7 +275,7 @@ class bst {
           }else {
               r->left = _remove(r->left, x, success);
               r->leftChildren--;
-
+              r = balance(r);
 
           }
       }
@@ -293,24 +286,7 @@ class bst {
           }else{
               r->right = _remove(r->right, x, success);
               r->rightChildren--;
-              bst_node* temp = r;
-              if(r->left->right== nullptr){
-                  r = r->left;
-                  r->right = temp;
-              }else{
-                  r = r->left->right;
-                  r->leftChildren = temp->leftChildren-1;
-                  r->height = temp->height;
-                  temp->leftChildren = 0;
-                  temp->left->right =nullptr;
-                  r->left = temp->left;
-                  r->right = temp;
-                  temp->height++;
-                  //r->rightChildren+=r->right->leftChildren+r->right->rightChildren+1;
-                  r->right->left = nullptr; //why do i do this?
-                  r->rightChildren++;
-                  r->left->rightChildren = 0;
-              }
+              r = balance(r);
 
           }
       }

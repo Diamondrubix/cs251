@@ -3,5 +3,4 @@
 
 CMakeFiles/project3.dir/test.cpp.o: ../bst.h
 CMakeFiles/project3.dir/test.cpp.o: ../test.cpp
-CMakeFiles/project3.dir/test.cpp.o: ../tinytest.h
 

@@ -84,6 +84,7 @@ typedef struct testinfo{
     testinfo* next;
 } testinfo;
 
+
 typedef struct failureInfo{
     const char* current_file;
     int current_line;
