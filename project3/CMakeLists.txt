@@ -3,4 +3,4 @@ project(project3)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(project3 test.cpp bst.h)
+add_executable(project3 test.cpp tinytest.h bst.h)

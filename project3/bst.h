@@ -94,13 +94,13 @@ class bst {
         if(hi < low) return nullptr;
         m = (low+hi)/2;
         root = a[m];
-        root->left  = _from_vec(a, low, m-1);
-        root->right = _from_vec(a, m+1, hi);
+        root->left  = _bal_sorted_vec(a, low, m-1);
+        root->right = _bal_sorted_vec(a, m+1, hi);
         return root;
 
     }
 
-    static bst * bal_sorted_vec(std::vector<bst_node*> &a, int n){
+    static bst_node * bal_sorted_vec(std::vector<bst_node*> &a, int n){
         bst_node* t;
         t = _bal_sorted_vec(a, 0, n-1);
         return t;
@@ -147,56 +147,10 @@ class bst {
       if(x < r->val){ //left
           if(max(r->leftChildren+1,r->rightChildren)>((2*min(r->leftChildren+1,r->rightChildren))+1)){
               bst_node* n = new bst_node(x, nullptr, nullptr, height);
-              if(r->right== nullptr){
-                  if(r->left->val>x){
-                      swap(r, r->left);
-                      r->right = r->left;
-                      r->rightChildren = r->leftChildren;
-                      n->height=r->height+1;
-                      r->left = n;
-                      return r;
-                  }
-                  n->left = r->left;
-                  r->left = nullptr;
-                  n->right = r;
-                  //variable updates
-                  n->height = r->height;
-                  r->height++;
-                  n->leftChildren = r->leftChildren;
-                  r->leftChildren = 0;
-                  n->rightChildren++;
-                  return n;
-              }else{
-                  //rotation
-                  if(r->left->right==nullptr) {
-                      swap(r, r->left);
-                      bst_node * temp = r->right;
-                      bst_node* temp2 = r->left->right;
-                      r->right = r->left;
-                      r->left = r->left->left;
-                      r->left->height--;
-                      //r->right->left = r->right->right; //del
-                      temp->height++;
-                      r->right->right = temp;
-                      //r->left = r->left->left;
-                      r->right->left = temp2;
-                      r->leftChildren= 1;
-                      r->rightChildren = r->right->rightChildren+r->right->leftChildren+1;
-                      return _insert(r,x,success,height);
-                  }else{
-                      swap(r, r->left->right);
-                      bst_node* temp = r->left->right;
-                      r->left->right= nullptr;
-                      //just assigned the node to the right part of the tree
-                      if(r->right->val>temp->val){
-                          r->right->left = temp;
-                      }else{
-                          r->right->left = temp;
-                      }
-                      _insert(r,x,success,height);
-                  }
+              r->leftChildren++;
+              r->left = _insert(r->left, x, success, height + 1);
+              r = balance(r);
 
-              }
           }else {
               r->leftChildren++;
               r->left = _insert(r->left, x, success, height + 1);
@@ -209,43 +163,9 @@ class bst {
           //if(r->left !=nullptr) {
           if(max(r->leftChildren,r->rightChildren+1)>((2*min(r->leftChildren,r->rightChildren+1))+1)) {
               bst_node *n = new bst_node(x, nullptr, nullptr, height);
-              if (r->left == nullptr) {
-                  if(r->right->val<x){
-                      swap(r, r->right);
-                      r->left = r->right;
-                      r->leftChildren = r->rightChildren;
-                      n->height=r->height+1;
-                      r->right = n;
-                      return r;
-                  }
-                  n->right = r->right;
-                  r->right = nullptr;
-                  n->left = r;
-                  //variable updates
-                  n->height = r->height;
-                  r->height++;
-                  n->rightChildren = r->rightChildren;
-                  r->rightChildren = 0;
-                  n->leftChildren++;
-                  return n;
-              }else{
-                  //rotation
-                  swap(r, r->right);
-                  bst_node * temp = r->right;
-                  bst_node* temp2 = r->right->left;
-                  r->left = r->right;
-                  r->right = r->right->right;
-                  r->right->height--;
-                  //r->right->left = r->right->right; //del
-                  temp->height++;
-                  r->left->left = temp;
-                  //r->left = r->left->left;
-                  r->left->right = temp2;
-                  r->rightChildren= 1;
-                  r->leftChildren = r->left->leftChildren+r->left->rightChildren+1;
-                  return _insert(r,x,success,height);
-
-              }
+              r->rightChildren++;
+              r->right = _insert(r->right, x, success, height + 1);
+              r = balance(r);
           }else{
               r->rightChildren++;
               r->right = _insert(r->right, x, success, height + 1);
@@ -271,6 +191,12 @@ class bst {
       root = _insert(root, x, success, 0);
       return success;
    }
+
+    bool massInsert(int* x, int size){
+        for(int i = 0; i<size;i++){
+            insert(x[i]);
+        }
+    }
 
 /**
  * function:  contains()

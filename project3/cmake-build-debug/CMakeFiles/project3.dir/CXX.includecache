@@ -17,4 +17,16 @@ iostream
 -
 bst.h
 /home/diamondrubix/CLionProjects/cs251/project3/bst.h
+tinytest.h
+/home/diamondrubix/CLionProjects/cs251/project3/tinytest.h
+
+/home/diamondrubix/CLionProjects/cs251/project3/tinytest.h
+stdio.h
+-
+stdbool.h
+-
+stdlib.h
+-
+string.h
+-
 

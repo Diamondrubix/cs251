@@ -1,5 +1,6 @@
 #include <iostream>
 #include "bst.h"
+#include "tinytest.h"
 
 int main(){
     int x;
@@ -8,8 +9,14 @@ int main(){
 
     bst<int> *t = new bst<int>();
 
+
+    /*
     while( (std::cin >> x))
         t->insert(x);
+    */
+    int arr[10] = {5, 6, 8, 7, 9, 2, 3, 1, 11, -5};
+    t->massInsert(arr,10);
+
 
 
     if(t->size() <= 20) {
@@ -19,7 +26,7 @@ int main(){
     }
     printf("\nmy test\n");
     int num = 9;
-    
+
     //t->remove(num);
     //num = 10;
     //t->remove(num);
@@ -36,6 +43,7 @@ int main(){
     std::cout << "\n#### Reported number of leaves:   " << nleaves  << "\n";
 
     delete t;
+
     
     return 0;
 }

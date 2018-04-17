@@ -90,6 +90,9 @@
 		<Unit filename="/home/diamondrubix/CLionProjects/cs251/project3/test.cpp">
 			<Option target="project3"/>
 		</Unit>
+		<Unit filename="/home/diamondrubix/CLionProjects/cs251/project3/tinytest.h">
+			<Option target="project3"/>
+		</Unit>
 		<Unit filename="/home/diamondrubix/CLionProjects/cs251/project3/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
