@@ -102,11 +102,12 @@ private:
     }
 
     void deleteDistrict(district* d){
+
         person* p = d->head;
         person* temp = p;
         while(temp!= nullptr){
             p = p->next;
-            free(temp);
+            delete temp;
             temp = p;
         }
     }
@@ -119,15 +120,19 @@ public:
         totalPopulation = 0;
         world = (district**) malloc (nrows * sizeof(district*) );
         int i,j;
-        for(i=0; i<ncols;i++){
+        for(i=0; i<nrows;i++){
             world[i] = (district*) malloc (ncols * sizeof(district) );
         }
 
 
-      // your constructor code here!
+        // your constructor code here!
     }
+
+
+
     ~GridWorld(){
         int i,j;
+
         for(i=0; i<rows;i++){
             for(j=0; j<cols;j++){
                 deleteDistrict(&world[i][j]);
@@ -137,8 +142,10 @@ public:
         totalPop.clear();
         //delete(&totalPop);
         free(world);
-      // your destructor code here.
+
+        // your destructor code here.
     }
+
     //const time
     bool birth(int row, int col, int &id){
         if(this->rows>=row && this->cols>=col && row>=0 && col>=0) {
@@ -158,7 +165,7 @@ public:
             return true;
         }
 
-      return false;
+        return false;
     }
     //const time
     bool death(int personID){
@@ -177,7 +184,7 @@ public:
             }
         }
 
-      return false;
+        return false;
     }
     //const
     bool whereis(int id, int &row, int &col)const{
@@ -190,7 +197,7 @@ public:
             col = p->col;
             return true;
         }
-      return false;
+        return false;
     }
 
     //const
@@ -225,25 +232,25 @@ public:
                 temp = temp->next;
             }
         }
-      return mems;
+        return mems;
     }
 
     int population()const{
-      return totalPopulation;
+        return totalPopulation;
     }
     //const
     int population(int row, int col)const{
         if(row<=rows && col<=cols &&row>=0 && col>=0){
             return world[row][col].population;
         }
-      return 0;
+        return 0;
     }
 
     int num_rows()const {
-      return rows;
+        return rows;
     }
     int num_cols()const {
-      return cols;
+        return cols;
     }
 
 };

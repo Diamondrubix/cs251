@@ -45,6 +45,7 @@ class bst {
     }
 
   private:
+    //these check for ints. used to compare children
     static int min(int l, int r){
         if(l<r){
             return l;
@@ -423,10 +424,11 @@ class bst {
                 if(n->left== nullptr){
                     return count+1;
                 }
-                return _num_geq(n->left, x, count+=(n->rightChildren+1));
+                return _num_geq(n->left, x, count+(n->rightChildren+1));
             }
         }
     }
+
     /* TODONE
      * Function:  num_geq
      * Description:  returns the number of elements in tree which are 
@@ -455,7 +457,7 @@ class bst {
                 if(n->right== nullptr){
                     return count+1;
                 }
-                return _num_leq(n->right, x, count+=n->leftChildren+1);
+                return _num_leq(n->right, x, count+n->leftChildren+1);
             }else{
                 if(n->left== nullptr){
                     return count;
@@ -494,6 +496,9 @@ class bst {
      *
      **/
     int num_range(const T & min, const T & max) {
+        if(min>max){
+            return 0;
+        }
         return num_geq(min)-(num_geq(max)-1);
     }
 

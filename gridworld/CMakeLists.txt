@@ -3,4 +3,4 @@ project(gridworld)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(gridworld main.cpp GWInterface.h GridWorld.h)
+add_executable(gridworld t1D_timed.cpp GWInterface.h GridWorld.h _util.h)

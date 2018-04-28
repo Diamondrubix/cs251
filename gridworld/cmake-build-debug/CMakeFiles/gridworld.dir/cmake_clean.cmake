@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/gridworld.dir/main.cpp.o"
+  "CMakeFiles/gridworld.dir/t1D_timed.cpp.o"
   "gridworld.pdb"
   "gridworld"
 )

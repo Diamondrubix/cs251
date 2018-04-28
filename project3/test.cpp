@@ -52,12 +52,15 @@ int main(){
 
     printf("\nmy test\n");
     int size = 10;
-    int arr[size] = {111,22,17,88,33,88,19,91,11,26}; //6
+    //int arr[size] = {8,9,6,5,7}; //7
+    int arr[size] = {111,22,17,88,33,88,19,91,11,26}; //10
     //int arr[size] = {5, 6, 8, 7, 9, 2, 3, 1, 11, -5}; //10
     massInsert(t,arr,size);
-    int num = 6;
-    t->remove(num);
+    int num = 9;
+    //t->remove(num);
     inorder(t);
+    t->get_ith(9,num);
+    printf("\ngreater %d\n",num );
     orders(t);
     printf("\end tests\n");
 
