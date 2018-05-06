@@ -78,13 +78,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/diamondrubix/CLionProjects/cs251/project4/main.c">
-			<Option target="project4"/>
-		</Unit>
 		<Unit filename="/home/diamondrubix/CLionProjects/cs251/project4/pq.c">
 			<Option target="project4"/>
 		</Unit>
 		<Unit filename="/home/diamondrubix/CLionProjects/cs251/project4/pq.h">
+			<Option target="project4"/>
+		</Unit>
+		<Unit filename="/home/diamondrubix/CLionProjects/cs251/project4/t1.c">
 			<Option target="project4"/>
 		</Unit>
 		<Unit filename="/home/diamondrubix/CLionProjects/cs251/project4/CMakeLists.txt">

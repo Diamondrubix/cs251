@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/project4.dir/main.c.o CMakeFiles/project4.dir/pq.c.o  -o project4 
+/usr/bin/cc -g   CMakeFiles/project4.dir/t1.c.o CMakeFiles/project4.dir/pq.c.o  -o project4 

@@ -57,28 +57,28 @@ include CMakeFiles/project4.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/project4.dir/flags.make
 
-CMakeFiles/project4.dir/main.c.o: CMakeFiles/project4.dir/flags.make
-CMakeFiles/project4.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diamondrubix/CLionProjects/cs251/project4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/project4.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/project4.dir/main.c.o   -c /home/diamondrubix/CLionProjects/cs251/project4/main.c
+CMakeFiles/project4.dir/t1.c.o: CMakeFiles/project4.dir/flags.make
+CMakeFiles/project4.dir/t1.c.o: ../t1.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diamondrubix/CLionProjects/cs251/project4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/project4.dir/t1.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/project4.dir/t1.c.o   -c /home/diamondrubix/CLionProjects/cs251/project4/t1.c
 
-CMakeFiles/project4.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/project4.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/diamondrubix/CLionProjects/cs251/project4/main.c > CMakeFiles/project4.dir/main.c.i
+CMakeFiles/project4.dir/t1.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/project4.dir/t1.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/diamondrubix/CLionProjects/cs251/project4/t1.c > CMakeFiles/project4.dir/t1.c.i
 
-CMakeFiles/project4.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/project4.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/diamondrubix/CLionProjects/cs251/project4/main.c -o CMakeFiles/project4.dir/main.c.s
+CMakeFiles/project4.dir/t1.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/project4.dir/t1.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/diamondrubix/CLionProjects/cs251/project4/t1.c -o CMakeFiles/project4.dir/t1.c.s
 
-CMakeFiles/project4.dir/main.c.o.requires:
+CMakeFiles/project4.dir/t1.c.o.requires:
 
-.PHONY : CMakeFiles/project4.dir/main.c.o.requires
+.PHONY : CMakeFiles/project4.dir/t1.c.o.requires
 
-CMakeFiles/project4.dir/main.c.o.provides: CMakeFiles/project4.dir/main.c.o.requires
-	$(MAKE) -f CMakeFiles/project4.dir/build.make CMakeFiles/project4.dir/main.c.o.provides.build
-.PHONY : CMakeFiles/project4.dir/main.c.o.provides
+CMakeFiles/project4.dir/t1.c.o.provides: CMakeFiles/project4.dir/t1.c.o.requires
+	$(MAKE) -f CMakeFiles/project4.dir/build.make CMakeFiles/project4.dir/t1.c.o.provides.build
+.PHONY : CMakeFiles/project4.dir/t1.c.o.provides
 
-CMakeFiles/project4.dir/main.c.o.provides.build: CMakeFiles/project4.dir/main.c.o
+CMakeFiles/project4.dir/t1.c.o.provides.build: CMakeFiles/project4.dir/t1.c.o
 
 
 CMakeFiles/project4.dir/pq.c.o: CMakeFiles/project4.dir/flags.make
@@ -107,13 +107,13 @@ CMakeFiles/project4.dir/pq.c.o.provides.build: CMakeFiles/project4.dir/pq.c.o
 
 # Object files for target project4
 project4_OBJECTS = \
-"CMakeFiles/project4.dir/main.c.o" \
+"CMakeFiles/project4.dir/t1.c.o" \
 "CMakeFiles/project4.dir/pq.c.o"
 
 # External object files for target project4
 project4_EXTERNAL_OBJECTS =
 
-project4: CMakeFiles/project4.dir/main.c.o
+project4: CMakeFiles/project4.dir/t1.c.o
 project4: CMakeFiles/project4.dir/pq.c.o
 project4: CMakeFiles/project4.dir/build.make
 project4: CMakeFiles/project4.dir/link.txt
@@ -125,7 +125,7 @@ CMakeFiles/project4.dir/build: project4
 
 .PHONY : CMakeFiles/project4.dir/build
 
-CMakeFiles/project4.dir/requires: CMakeFiles/project4.dir/main.c.o.requires
+CMakeFiles/project4.dir/requires: CMakeFiles/project4.dir/t1.c.o.requires
 CMakeFiles/project4.dir/requires: CMakeFiles/project4.dir/pq.c.o.requires
 
 .PHONY : CMakeFiles/project4.dir/requires

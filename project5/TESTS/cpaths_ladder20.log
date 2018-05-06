@@ -1,0 +1,103 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++
++ THIS OUTPUT IS THE RESULT OF THE FOLLOWING COMMAND-LINE:
++
++    ./cpaths ladder20.g 
++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+< BEGIN ADJACENCY-LIST:
+
+        [ OMITTED -- BIG GRAPH! ]
+
+END ADJACENCY LIST >
+
+
+CPATHS REPORT:
+     [NOTES:  'state' not necessarily meaningful
+              'npaths' not necessarily meaningful]
+
+a1 : dist=0 ; pred=a1 ; state='f'; npaths=0
+     PATH: <a1>
+a2 : dist=34 ; pred=a1 ; state='f'; npaths=0
+     PATH: <a1 a2>
+b2 : dist=91 ; pred=a1 ; state='f'; npaths=0
+     PATH: <a1 b2>
+b1 : dist=0 ; pred=b1 ; state='f'; npaths=0
+     PATH: <b1>
+a3 : dist=121 ; pred=b2 ; state='f'; npaths=0
+     PATH: <a1 b2 a3>
+b3 : dist=151 ; pred=b2 ; state='f'; npaths=0
+     PATH: <a1 b2 b3>
+a4 : dist=202 ; pred=a3 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 a4>
+b4 : dist=217 ; pred=a3 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4>
+a5 : dist=313 ; pred=b4 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 a5>
+b5 : dist=309 ; pred=b4 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5>
+a6 : dist=355 ; pred=b5 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6>
+b6 : dist=328 ; pred=b5 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 b6>
+a7 : dist=445 ; pred=a6 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7>
+b7 : dist=434 ; pred=a6 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 b7>
+a8 : dist=515 ; pred=b7 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 b7 a8>
+b8 : dist=504 ; pred=a7 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8>
+a9 : dist=599 ; pred=b8 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9>
+b9 : dist=595 ; pred=b8 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 b9>
+a10 : dist=635 ; pred=b9 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 b9 a10>
+b10 : dist=692 ; pred=a9 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10>
+a11 : dist=711 ; pred=b10 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 a11>
+b11 : dist=773 ; pred=b10 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11>
+a12 : dist=843 ; pred=b11 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 a12>
+b12 : dist=823 ; pred=b11 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12>
+a13 : dist=919 ; pred=b12 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13>
+b13 : dist=868 ; pred=b12 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 b13>
+a14 : dist=947 ; pred=a13 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 a14>
+b14 : dist=930 ; pred=a13 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 b14>
+a15 : dist=1018 ; pred=b14 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 b14 a15>
+b15 : dist=1017 ; pred=b14 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 b14 b15>
+a16 : dist=1065 ; pred=b15 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 b14 b15 a16>
+b16 : dist=1085 ; pred=b15 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 b14 b15 b16>
+a17 : dist=1157 ; pred=b16 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 b14 b15 b16 a17>
+b17 : dist=1149 ; pred=a16 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 b14 b15 a16 b17>
+a18 : dist=1215 ; pred=a17 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 b14 b15 b16 a17 a18>
+b18 : dist=1247 ; pred=a17 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 b14 b15 b16 a17 b18>
+a19 : dist=1269 ; pred=b18 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 b14 b15 b16 a17 b18 a19>
+b19 : dist=1293 ; pred=a18 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 b14 b15 b16 a17 a18 b19>
+a20 : dist=1350 ; pred=b19 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 b14 b15 b16 a17 a18 b19 a20>
+b20 : dist=1313 ; pred=b19 ; state='f'; npaths=0
+     PATH: <a1 b2 a3 b4 b5 a6 a7 b8 a9 b10 b11 b12 a13 b14 b15 b16 a17 a18 b19 b20>
+
+END CPATHS REPORT
+

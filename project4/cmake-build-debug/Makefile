@@ -123,33 +123,6 @@ project4/fast:
 	$(MAKE) -f CMakeFiles/project4.dir/build.make CMakeFiles/project4.dir/build
 .PHONY : project4/fast
 
-main.o: main.c.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/project4.dir/build.make CMakeFiles/project4.dir/main.c.o
-.PHONY : main.c.o
-
-main.i: main.c.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/project4.dir/build.make CMakeFiles/project4.dir/main.c.i
-.PHONY : main.c.i
-
-main.s: main.c.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/project4.dir/build.make CMakeFiles/project4.dir/main.c.s
-.PHONY : main.c.s
-
 pq.o: pq.c.o
 
 .PHONY : pq.o
@@ -177,6 +150,33 @@ pq.c.s:
 	$(MAKE) -f CMakeFiles/project4.dir/build.make CMakeFiles/project4.dir/pq.c.s
 .PHONY : pq.c.s
 
+t1.o: t1.c.o
+
+.PHONY : t1.o
+
+# target to build an object file
+t1.c.o:
+	$(MAKE) -f CMakeFiles/project4.dir/build.make CMakeFiles/project4.dir/t1.c.o
+.PHONY : t1.c.o
+
+t1.i: t1.c.i
+
+.PHONY : t1.i
+
+# target to preprocess a source file
+t1.c.i:
+	$(MAKE) -f CMakeFiles/project4.dir/build.make CMakeFiles/project4.dir/t1.c.i
+.PHONY : t1.c.i
+
+t1.s: t1.c.s
+
+.PHONY : t1.s
+
+# target to generate assembly for a file
+t1.c.s:
+	$(MAKE) -f CMakeFiles/project4.dir/build.make CMakeFiles/project4.dir/t1.c.s
+.PHONY : t1.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... project4"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 	@echo "... pq.o"
 	@echo "... pq.i"
 	@echo "... pq.s"
+	@echo "... t1.o"
+	@echo "... t1.i"
+	@echo "... t1.s"
 .PHONY : help
 
 

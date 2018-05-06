@@ -3,4 +3,4 @@ project(project4 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(project4 main.c pq.c pq.h)
+add_executable(project4 t1.c pq.c pq.h)

@@ -1,0 +1,87 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++
++ THIS OUTPUT IS THE RESULT OF THE FOLLOWING COMMAND-LINE:
++
++    ./npaths ladder31.g 
++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+< BEGIN ADJACENCY-LIST:
+
+        [ OMITTED -- BIG GRAPH! ]
+
+END ADJACENCY LIST >
+
+
+NPATHS REPORT:
+
+    [NOTES:  'state' not necessarily meaningful
+             'pred' not meaningful ]
+             'dist' not meaningful ]
+
+a1 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a2 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b2 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b1 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a3 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b3 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a4 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b4 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a5 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b5 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a6 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b6 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a7 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b7 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a8 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b8 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a9 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b9 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a10 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b10 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a11 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b11 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a12 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b12 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a13 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b13 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a14 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b14 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a15 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b15 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a16 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b16 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a17 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b17 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a18 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b18 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a19 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b19 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a20 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b20 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a21 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b21 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a22 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b22 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a23 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b23 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a24 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b24 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a25 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b25 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a26 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b26 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a27 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b27 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a28 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b28 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a29 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b29 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a30 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b30 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+a31 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+b31 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=1073741824
+
+END NPATHS REPORT
+

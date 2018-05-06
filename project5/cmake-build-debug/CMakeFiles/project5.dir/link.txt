@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/project5.dir/demo.cpp.o  -o project5 

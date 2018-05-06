@@ -6,12 +6,12 @@
 
 #IncludeRegexTransform: 
 
-/home/diamondrubix/CLionProjects/cs251/project4/main.c
+/home/diamondrubix/CLionProjects/cs251/project4/header.c
+stdlib.h
+-
 stdio.h
 -
-pq.h
-/home/diamondrubix/CLionProjects/cs251/project4/pq.h
-stdlib.h
+time.h
 -
 
 /home/diamondrubix/CLionProjects/cs251/project4/pq.c
@@ -23,4 +23,28 @@ stdio.h
 -
 
 /home/diamondrubix/CLionProjects/cs251/project4/pq.h
+
+/home/diamondrubix/CLionProjects/cs251/project4/pqutil.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+time.h
+-
+
+/home/diamondrubix/CLionProjects/cs251/project4/t1.c
+assert.h
+-
+stdio.h
+-
+stdlib.h
+-
+pq.h
+/home/diamondrubix/CLionProjects/cs251/project4/pq.h
+header.c
+/home/diamondrubix/CLionProjects/cs251/project4/header.c
+pqutil.c
+/home/diamondrubix/CLionProjects/cs251/project4/pqutil.c
 

@@ -1,0 +1,64 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++
++ THIS OUTPUT IS THE RESULT OF THE FOLLOWING COMMAND-LINE:
++
++    ./npaths chain20.g 
++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+< BEGIN ADJACENCY-LIST:
+
+v1 : (v2, 4) (v3, 4) (v5, 9) (v9, 9) (v17, 9) 
+v2 : (v3, 2) (v4, 9) (v6, 1) (v10, 5) (v18, 5) 
+v3 : (v4, 3) (v5, 1) (v7, 6) (v11, 1) (v19, 5) 
+v5 : (v6, 9) (v7, 1) (v9, 1) (v13, 8) 
+v9 : (v10, 5) (v11, 6) (v13, 7) (v17, 9) 
+v17 : (v18, 3) (v19, 9) 
+v4 : (v5, 5) (v6, 9) (v8, 1) (v12, 6) (v20, 8) 
+v6 : (v7, 2) (v8, 7) (v10, 4) (v14, 6) 
+v10 : (v11, 4) (v12, 7) (v14, 9) (v18, 7) 
+v18 : (v19, 7) (v20, 8) 
+v7 : (v8, 8) (v9, 3) (v11, 8) (v15, 4) 
+v11 : (v12, 3) (v13, 7) (v15, 5) (v19, 1) 
+v19 : (v20, 9) 
+v8 : (v9, 6) (v10, 1) (v12, 1) (v16, 9) 
+v12 : (v13, 5) (v14, 4) (v16, 2) (v20, 7) 
+v20 : 
+v13 : (v14, 5) (v15, 8) (v17, 8) 
+v14 : (v15, 4) (v16, 9) (v18, 3) 
+v15 : (v16, 3) (v17, 9) (v19, 9) 
+v16 : (v17, 8) (v18, 8) (v20, 5) 
+
+END ADJACENCY LIST >
+
+
+NPATHS REPORT:
+
+    [NOTES:  'state' not necessarily meaningful
+             'pred' not meaningful ]
+             'dist' not meaningful ]
+
+v1 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=29050
+v2 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=16448
+v3 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=18620
+v5 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=17898
+v9 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=17136
+v17 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=15816
+v4 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=15816
+v6 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=16900
+v10 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=17052
+v18 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=18620
+v7 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=17208
+v11 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=17052
+v19 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=16448
+v8 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=16802
+v12 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=17136
+v20 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=29050
+v13 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=16802
+v14 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=17208
+v15 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=16900
+v16 : dist=-1 ; pred=$NONE$ ; state='f'; npaths=17898
+
+END NPATHS REPORT
+

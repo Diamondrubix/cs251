@@ -17,6 +17,7 @@
 // "Opaque type" -- definition of pq_struct hidden in pq.c
 typedef struct pq_struct PQ;
 
+
 /**
 * Function: pq_create
 * Parameters: capacity - self-explanatory
@@ -30,10 +31,10 @@ typedef struct pq_struct PQ;
 
 extern PQ * pq_create(int capacity, int min_heap);
 
-//DELETE ME
+//DELETEME
 extern void printPQ(PQ* pq);
-//DELETE ME
-extern void printIDS();
+//DELETEME
+extern void printIDS(PQ* pq);
 /**
 * Function: pq_free
 * Parameters: PQ * pq
