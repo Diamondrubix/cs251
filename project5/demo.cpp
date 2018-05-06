@@ -20,6 +20,7 @@ int main(){
 
   std::vector<graph::vertex_label> report;
   std::vector<int> res;
+  std::vector<string> resSTR;
 
   std::vector<int> topo;
   topo.push_back(0);
@@ -28,6 +29,15 @@ int main(){
   topo.push_back(3);
 
   int i;
+
+  /*omar
+  g._add_edge("a b");
+  g._add_edge("a c");
+  g._add_edge("b g");
+  g._add_edge("c g");
+  g._add_edge("g e");
+   //*/
+  /* //ex1A i think
   g._add_edge("a b");
   g._add_edge("a c");
   g._add_edge("a d");
@@ -38,13 +48,15 @@ int main(){
   g._add_edge("d g");
   g._add_edge("e g");
   g._add_edge("f g");
+   //*/
 
-  /*/small
+
+  //*/small
   g._add_edge("a b");
   g._add_edge("a c");
   g._add_edge("b d");
   g._add_edge("c d");
-  */
+  //*/
    /* //topo
   if(g.valid_topo_order(topo)){
     printf("topo passed\n");
@@ -67,6 +79,18 @@ int main(){
   g.dag_num_paths(report);
   //*/
 
+  /* //ring
+    g._add_edge("x y");
+    g._add_edge("y z");
+    g._add_edge("a b");
+    g._add_edge("b c");
+    g._add_edge("x a");
+    g._add_edge("a x");
+    g._add_edge("y b");
+    g._add_edge("b y");
+    g._add_edge("z c");
+    g._add_edge("c z");
+    */
 
   /*//test critical paths
   g.dag_critical_paths(report);
@@ -76,14 +100,15 @@ int main(){
    */
   //* //test extract path
   //g.dag_critical_paths(report);
-  g.bfs(0, report);
-  for(int j = 0; j<report.size();j++) {
-    g.extract_path(report, j, res);
+  //g.bfs(0, report);
+//  for(int j = 0; j<report.size();j++) {
+    //g.extract_path(j, res);
+    g.enum_paths(3,resSTR);
     for (i = 0; i < res.size(); i++) {
-      printf("%d ", res[i]);
+      printf("%s ", resSTR[i]);
     }
     printf("\n");
-  }
+  //}
    //*/
   reporter(report);
 

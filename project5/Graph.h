@@ -7,6 +7,7 @@
 #include <sstream>
 #include <fstream>
 #include <iostream>
+#include <algorithm>    // std::reverse
 
 using std::string;
 using std::vector;
@@ -436,10 +437,12 @@ class graph {
       // By convention, we set the predecessor to itself.
       report[src].pred = src;
       report[src].state = DISCOVERED;
+      report[src].npaths = 1;
+
       q.push(src);
 
       while(!q.empty()) {
-        // dequeue front node from queue
+        // dequeue front node frombfs queue
         u = q.front();
         q.pop();
 
@@ -450,10 +453,16 @@ class graph {
             report[v].dist = report[u].dist + 1;
             report[v].pred = u;
             report[v].state = DISCOVERED;
-            report[v].npaths = 1;
+            report[v].npaths = report[u].npaths;
             // enqueue newly discovered vertex
             q.push(v);
           }else{
+
+              if(report[u].dist+1==report[v].dist) {
+                  report[v].npaths+=report[u].npaths;
+              }
+
+              /*
               if(report[u].dist<report[v].dist){
                   if(report[u].dist+1==report[v].dist){
                       report[v].npaths++;
@@ -462,6 +471,7 @@ class graph {
                       report[v].npaths = 1;
                   }
               }
+              */
           }
         }
       }
@@ -469,12 +479,12 @@ class graph {
     }
 
     bool bfs(const string src, std::vector<vertex_label> &report) {
-      int u;
+        int u;
 
-      if((u=name2id(src)) == -1)
-          return false;
-      bfs(u, report);
-      return true;
+        if((u=name2id(src)) == -1)
+            return false;
+        bfs(u, report);
+        return true;
     }
 
   private:
@@ -671,7 +681,10 @@ class graph {
     bool extract_path(const vector<vertex_label> &rpt, int dest, vector<int> &path) {
       path.clear();
 
-      return Rextract_path(rpt, dest, path);
+      bool ret = Rextract_path(rpt, dest, path);
+      //reverse
+      std::reverse(path.begin(),path.end());
+      return ret;
 
     }
 
@@ -1005,9 +1018,8 @@ class graph {
     vector<string> Renum_paths(int target){
         vector<string> p;
         string s = "";
-        string DELETEME = vertices[target].name;
         if(vertices[target].incoming.size() == 0){
-            s=s+vertices[target].name;
+            s=vertices[target].name;
             //s+=" ";
             p.push_back(s);
             return p;
@@ -1015,7 +1027,7 @@ class graph {
             for(int i = 0; i <vertices[target].incoming.size();i++){
                 vector<string> n = Renum_paths(vertices[target].incoming[i].vertex_id);
                 for(int j = 0; j<n.size();j++){
-                    s = s+n[j]+" "+vertices[target].name;
+                    s = n[j]+" "+vertices[target].name;
                     p.push_back(s);
                 }
             }

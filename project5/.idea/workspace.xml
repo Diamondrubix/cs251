@@ -35,29 +35,11 @@
       <file leaf-file-name="Graph.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Graph.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="457" column="24" selection-start-line="457" selection-start-column="24" selection-end-line="457" selection-end-column="24" />
+            <state relative-caret-position="278">
+              <caret line="1029" column="24" selection-start-line="1029" selection-start-column="24" selection-end-line="1029" selection-end-column="24" />
               <folding>
                 <element signature="e#1#20#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ex1A" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ex1A">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stl_vector.h" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/c++/5/bits/stl_vector.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="779" selection-start-line="779" selection-end-line="779" />
             </state>
           </provider>
         </entry>
@@ -65,11 +47,20 @@
       <file leaf-file-name="demo.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+            <state relative-caret-position="209">
+              <caret line="105" selection-start-line="105" selection-end-line="105" />
               <folding>
                 <element signature="e#1#20#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stl_vector.h" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/c++/5/bits/stl_vector.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="779" selection-start-line="779" selection-end-line="779" />
             </state>
           </provider>
         </entry>
@@ -78,11 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>insert</find>
-      <find>edges</find>
-      <find>add</find>
-      <find>public</find>
-      <find>bsf</find>
       <find>first</find>
       <find>bf</find>
       <find>verte</find>
@@ -91,7 +77,6 @@
       <find>display</find>
       <find>Rc</find>
       <find>valid_topo_order</find>
-      <find>num_paths</find>
       <find>init</find>
       <find>do i need to init</find>
       <find>check</find>
@@ -100,20 +85,27 @@
       <find>res</find>
       <find>todo</find>
       <find>critical_path</find>
-      <find>extract</find>
       <find>extract path</find>
       <find>extract_path</find>
       <find>cr</find>
       <find>crit</find>
-      <find>bfs</find>
-      <find>critica</find>
+      <find>npaths</find>
       <find>critical</find>
+      <find>num</find>
+      <find>num_paths</find>
+      <find>num_path</find>
+      <find>path</find>
+      <find>extract</find>
+      <find>reverse</find>
+      <find>critica</find>
+      <find>bfs</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/ex1A" />
         <option value="$PROJECT_DIR$/demo.cpp" />
         <option value="$PROJECT_DIR$/Graph.h" />
       </list>
@@ -140,6 +132,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,7 +144,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -205,16 +197,17 @@
       <workItem from="1525460304056" duration="2550000" />
       <workItem from="1525495555683" duration="6269000" />
       <workItem from="1525501971886" duration="455000" />
-      <workItem from="1525540793403" duration="29221000" />
+      <workItem from="1525540793403" duration="35745000" />
+      <workItem from="1525618388760" duration="196000" />
+      <workItem from="1525620038172" duration="3613000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71625000" />
+    <option name="totallyTimeSpent" value="81958000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1773585" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -222,11 +215,11 @@
       <window_info anchor="bottom" id="CMake" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24233128" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4386503" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.32310838" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.36707565" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -247,24 +240,24 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Graph.h</url>
-          <line>887</line>
+          <line>900</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Graph.h</url>
-          <line>854</line>
+          <line>867</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/demo.cpp</url>
-          <line>80</line>
-          <option name="timeStamp" value="64" />
+          <url>file://$PROJECT_DIR$/Graph.h</url>
+          <line>1018</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="65" />
+      <option name="time" value="75" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -292,16 +285,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Graph.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12168">
-          <caret line="676" column="14" lean-forward="true" selection-start-line="676" selection-start-column="14" selection-end-line="676" selection-end-column="14" />
-          <folding>
-            <element signature="e#1#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -690,34 +673,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/5/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="779" selection-start-line="779" selection-end-line="779" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ex1A">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="10" />
+        <state relative-caret-position="162">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+        <state relative-caret-position="209">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
           <folding>
             <element signature="e#1#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/c++/5/bits/stl_construct.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="151" selection-start-line="151" selection-end-line="151" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/stl_vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="779" selection-start-line="779" selection-end-line="779" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Graph.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="457" column="24" selection-start-line="457" selection-start-column="24" selection-end-line="457" selection-end-column="24" />
+        <state relative-caret-position="278">
+          <caret line="1029" column="24" selection-start-line="1029" selection-start-column="24" selection-end-line="1029" selection-end-column="24" />
           <folding>
             <element signature="e#1#20#0" expanded="true" />
           </folding>
