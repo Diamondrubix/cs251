@@ -676,7 +676,12 @@ class graph {
             return true;
         }
         int newdest = path.size();
-        return Rextract_path(rpt, rpt[dest].pred, path);
+        if(rpt[dest].dist !=-1) {
+            return Rextract_path(rpt, rpt[dest].pred, path);
+        }else{
+            path.clear();
+            return true;
+        }
     }
     bool extract_path(const vector<vertex_label> &rpt, int dest, vector<int> &path) {
       path.clear();
@@ -716,16 +721,17 @@ class graph {
      */
 
     //move to private
-    double get_dag_critical_paths(vector<vertex_label> & rpt, int index, int* visited){
+    double get_dag_critical_paths(vector<vertex_label> & rpt, int index){
         //if its been found already
-        if(visited[index]){
+        if(rpt[index].state == 'f'){
             return rpt[index].dist;
         }
         //if it has no incoming edges
         if(vertices[index].incoming.size() == 0){
             rpt[index].dist = 0;
             rpt[index].pred = index; //double check that this is right
-            visited[index] = 1;
+            rpt[index].state = 'f';
+            //visited[index] = 1;
             return 0;
         }
         //if it needs to be calculated
@@ -733,13 +739,14 @@ class graph {
         int pred = -1;
         for(int i =0 ; i<vertices[index].incoming.size();i++){
             double temp = 0;
-            temp = vertices[index].incoming[i].weight+get_dag_critical_paths(rpt, vertices[index].incoming[i].vertex_id, visited);
+            temp = vertices[index].incoming[i].weight+get_dag_critical_paths(rpt, vertices[index].incoming[i].vertex_id);
             if(temp > longest){longest = temp; pred = vertices[index].incoming[i].vertex_id;}
 
         }
         rpt[index].dist = longest;
         rpt[index].pred = pred;
-        visited[index] = 1;
+        rpt[index].state = 'f';
+        //visited[index] = 1;
         return longest;
 
     }
@@ -752,14 +759,9 @@ class graph {
 
       rpt.resize(vertices.size());
 
-      int visited[vertices.size()];
-      for(i =0 ; i<vertices.size();i++){
-          visited[i] = 0;
-      }
-
       for(i = 0; i< vertices.size();i++){
-          if(!visited[i]) {
-              get_dag_critical_paths(rpt, i, visited);
+          if(rpt[i].state!='f') {
+              get_dag_critical_paths(rpt, i);
           }
       }
       // your code here...
@@ -831,6 +833,7 @@ class graph {
      *
      */
     //make private
+private:
     int get1_dag_num_paths(vector<vertex_label> & rpt, int index, int* visited){
         //if it's a root node
         if(vertices[index].incoming.size()==0){
@@ -877,7 +880,7 @@ class graph {
         return rpt[index].pred;
     }
 
-
+public:
     bool dag_num_paths(vector<vertex_label> & rpt) {
 
         if(has_cycle()){return false;}
@@ -927,11 +930,10 @@ class graph {
       if(has_cycle())
         return false;
 
-      int arr[vertices.size()]; //do i need to init? (check)
+      int arr[vertices.size()];
         for(int dex = 0; dex< vertices.size();dex++){
             arr[dex] = 0;
         }
-
 
       for(int dex = 0; dex<order.size();dex++) {
 
@@ -1015,6 +1017,7 @@ class graph {
      *   20 lines of code.
      */
     //make private
+private:
     vector<string> Renum_paths(int target){
         vector<string> p;
         string s = "";
@@ -1035,7 +1038,7 @@ class graph {
         }
     }
 
-
+public:
     bool enum_paths(int target, vector<string> &paths) {
       paths.clear();
       if(has_cycle() || target < 0 || target >= num_nodes())

@@ -17,6 +17,7 @@ void reporter(std::vector<graph::vertex_label> report){
 
 int main(){
   graph g;
+  graph g1;
 
   std::vector<graph::vertex_label> report;
   std::vector<int> res;
@@ -29,6 +30,8 @@ int main(){
   topo.push_back(3);
 
   int i;
+  g1._add_edge("a b");
+
 
   /*omar
   g._add_edge("a b");
